@@ -144,7 +144,7 @@ def generate_hashes_from_block(data_block, algorithm):
   sha256_hash = hashlib.sha256(hashlib.sha256(data_block).digest()).digest()[::-1]
   header_hash = ""
   if algorithm == 'scrypt':
-    header_hash = scrypt.hash(data_block,data_block,1024,1,1,32)[::-1] 
+    header_hash = scrypt.hash(data_block,data_block,2048,1,1,32)[::-1]
   elif algorithm == 'SHA256':
     header_hash = sha256_hash
   elif algorithm == 'X11':
